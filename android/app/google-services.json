@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "316778717785",
+    "project_id": "umanagar-7ec1d",
+    "storage_bucket": "umanagar-7ec1d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316778717785:android:7ece6f9a0d5aa56d918748",
+        "android_client_info": {
+          "package_name": "com.electronicshop_ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtbiUbJU9GBDpKyJ3jlyI0cYy7VweP7RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
