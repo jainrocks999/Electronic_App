@@ -21,8 +21,8 @@ return (
           }}>
           <Image
             style={{
-              height: hp(8),
-              width: wp(30),
+              height: hp(10),
+              width: wp(40),
               resizeMode:'contain',
               tintColor:'#000000',
             }}

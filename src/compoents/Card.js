@@ -79,7 +79,7 @@ const Card = ({item,onPress=()=>{}, sendData}) => {
                     </Text>
                   {/* <View > */}
                   <Text style={{ marginTop: 0,  fontFamily:'Mulish-SemiBold', padding:wp(2), fontSize: wp(3.5), fontFamily:'Mulish-SemiBold',}}>
-                    { removeHtmlTags(item.description)?.split('\n').filter(line => line.trim())[0]?.substring(0, 75)}
+                    { removeHtmlTags(item.description)?.split('\n').filter(line => line.trim())[0]?.substring(0, 35)}
                      ...
                      </Text>
                   {/* </View> */}
@@ -106,7 +106,7 @@ const Card = ({item,onPress=()=>{}, sendData}) => {
                       </>
                     ):(
                       <Text style={[styles.Price, { color: 'black' }]}>
-                       ₹ {item.sale_price}
+                         ₹ {item.sale_price || item.price}
                       </Text>
                     )}
                     <Text

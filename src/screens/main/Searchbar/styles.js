@@ -159,18 +159,17 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   cardView: {
-    width: wp(46),
-    backgroundColor: '#e6f0f2',
+    width: wp(47.5),
+    backgroundColor: '#ffffff',
     borderRadius: wp(2),
-    margin: wp(2),
-    padding: wp(3),
-    shadowColor: 'black',
-    shadowOpacity: 0.1,
+    margin: wp(1),
+    padding: wp(1),
+   
+   
   },
   wishlistBtn: {
-    position: 'absolute',
-    top: 10,
-    right: 10,
+    top: 2,
+    right: -2,
     zIndex: 10,
   },
   img: {
@@ -178,17 +177,37 @@ export default StyleSheet.create({
     height: hp(20),
     borderRadius: wp(2),
   },
-  productName: {
-    fontSize: wp(4),
-    fontWeight: '500',
-    textAlign: 'center',
-    marginTop: hp(1),
+  // productName: {
+  //   fontSize: wp(3.5),
+  // fontFamily:'Mulish-Bold',
+  //   textAlign: 'center',
+  //   marginTop: hp(1),
+  // },
+  txt3: {
+    // borderWidth:1,
+    padding:wp(1),
+    marginTop: wp(2),
+    fontSize: wp(3.5),
+    fontFamily:"Mulish-SemiBold",
+    color: 'black',
   },
-  price: {
-    fontSize: wp(4),
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: hp(0.5),
-    color: 'green',
+  priceCOntainer: {
+    // marginTop: hp(1),
+    marginBottom: hp(1),
+    padding: wp(1),
   },
+  Price: {
+    fontSize: wp(5),
+    padding:wp(1),
+    fontFamily:"Mulish-Bold",
+    color: 'black',
+  },
+  // price: {
+  //   fontSize: wp(4),
+  //   fontWeight: 'bold',
+  //   textAlign: 'center',
+  //   marginTop: hp(0.5),
+  //   color: 'green',
+  // },
+ 
 });

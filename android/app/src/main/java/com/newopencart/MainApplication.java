@@ -1,4 +1,4 @@
-package com.electronicshop_ecommerce;
+package com.electronicshop;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

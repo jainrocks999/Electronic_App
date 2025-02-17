@@ -39,7 +39,7 @@ const Splash = ({navigation}) => {
         <Image
           style={{
             height: hp(20),
-            width: wp(60),
+            width: wp(50),
             tintColor: 'white',
           }}
           source={require('../../assests/ecom.png')}

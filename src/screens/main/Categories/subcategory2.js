@@ -96,9 +96,9 @@ const Subcategory2 = ({route}) => {
             onPress={() => navigation.goBack()}
             name="arrowleft"
             size={wp(5.9)}
-            color="white"
+            color="#000000"
           />
-          <View style={{marginLeft: wp(4)}}>
+          <View style={{marginLeft: wp(6)}}>
             <Text style={styles.txt}>Products</Text>
           </View>
         </View>
@@ -192,7 +192,7 @@ const Subcategory2 = ({route}) => {
                       </>
                     ) : (
                       <Text style={[styles.Price, {color: 'black'}]}>
-                        ₹ {item.sale_price}
+                        ₹ {item.sale_price || item.price}
                       </Text>
                     )}
                     <Text
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
   },
   txt: {
     fontSize: wp(4.5),
-    color: 'white',
+    color: '#000000',
   },
   cardView: {
     backgroundColor: '#ffffff',

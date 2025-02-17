@@ -461,12 +461,12 @@ const Home = () => {
                             color: 'red',
                           },
                         ]}>
-                        ₹ {item.sale_price}
+                        ₹ {item.sale_price || item.price} 
                       </Text>
                     </>
                   ) : (
                     <Text style={[styles.Price, { color: 'black' }]}>
-                      ₹ {item.sale_price}
+                      ₹ {item.sale_price || item.price} 
                     </Text>
                   )}
                   <Text

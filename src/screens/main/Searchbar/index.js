@@ -36,7 +36,7 @@
 //   const dispatch = useDispatch();
 //   const typingTimeoutRef = useRef(null);
 
-  
+
 //   const handleInputChange = text => {
 //     // Clear the previous timeout when the user types again
 //     if (typingTimeoutRef.current) {
@@ -266,6 +266,7 @@ import {
   Image,
   TouchableOpacity,
   Keyboard,
+  Dimensions
 } from 'react-native';
 import styles from './styles';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -274,6 +275,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Loader from '../../../compoents/Loader';
 import { searchQ, addwishlist1, productDetail } from '../../../redux/slice/Homesclice';
 import Imagepath from '../../../compoents/Imagepath';
+const { width } = Dimensions.get("window");
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
 
 const SearchBar = ({ navigation, route }) => {
   const dispatch = useDispatch();
@@ -293,7 +299,7 @@ const SearchBar = ({ navigation, route }) => {
         Keyboard.dismiss();
         handleSearchbar(text);
       }
-    }, 1000); 
+    }, 1000);
   };
 
   const handleSearchbar = async text => {
@@ -338,6 +344,10 @@ const SearchBar = ({ navigation, route }) => {
     );
   };
 
+  const removeHtmlTags = str => {
+    return str?.replace(/<\/?[^>]+(>|$)/g, '');
+  };
+
   return (
     <View style={styles.container}>
       {isLoading && <Loader />}
@@ -374,8 +384,15 @@ const SearchBar = ({ navigation, route }) => {
             <View style={styles.cardView}>
               <TouchableOpacity onPress={() => addWishList(item)} style={styles.wishlistBtn}>
                 <AntDesign
-                  name="hearto"
-                  style={[styles.icon, { color: item.is_wishlist ? 'red' : 'grey' }]}
+                  // name="hearto"
+                  name={item.is_wishlist ? "heart" : "hearto"}
+                  style={[
+                    styles.icon,
+                    {
+                      color: item.is_wishlist ? 'red' : 'grey',
+                      fontSize: 24 // Aap yahan fontSize apne requirement ke hisaab se adjust kar sakte hain
+                    }
+                  ]}
                 />
               </TouchableOpacity>
               <TouchableOpacity onPress={() => handleDetail(item)}>
@@ -384,8 +401,65 @@ const SearchBar = ({ navigation, route }) => {
                   source={{ uri: `${Imagepath.Path}${item.images}` }}
                 />
               </TouchableOpacity>
-              <Text style={styles.productName}>{item.name}</Text>
-              <Text style={styles.price}>{item.special ? item.special : item.sale_price}</Text>
+              {/* <Text style={styles.productName}>{item.name}</Text> */}
+              <Text style={styles.txt3}> {removeHtmlTags(item.name)
+                ?.split('\n')
+                .filter(line => line.trim())[0]
+                ?.substring(0, 30)}{' '}
+                ...{' '}</Text>
+
+              <Text style={styles.txt3}>
+                {removeHtmlTags(item.description)
+                  ?.split('\n')
+                  .filter(line => line.trim())[0]
+                  ?.substring(0, 30)}{' '}
+                ...{' '}
+              </Text>
+              {/* <Text style={styles.price}>{item.special ? item.special : item.sale_price}</Text> */}
+              <View style={styles.priceCOntainer}>
+                {item.special ? (
+                  <>
+                    <Text style={[styles.Price, { color: 'black' }]}>
+                      {item.special}
+                    </Text>
+                    <Text
+                      style={[
+                        styles.Price,
+                        {
+                          textDecorationLine: 'line-through',
+                          fontSize: wp(3),
+                          fontWeight: 'bold',
+                          marginLeft: wp(1),
+                          color: 'red',
+                        },
+                      ]}>
+                      ₹ {item.sale_price}
+                    </Text>
+                  </>
+                ) : (
+                  <Text style={[styles.Price, { color: 'black' }]}>
+                    ₹ {item.sale_price || item.price}
+                  </Text>
+                )}
+
+
+                <Text
+                  style={[
+                    styles.Price,
+                    {
+                      fontSize: wp(3),
+                      fontWeight: 'bold',
+                      marginTop: 5,
+                      marginBottom: 10,
+                      color: 'grey',
+                    },
+                  ]}>
+                  Ex Tax:{' '}
+                  <Text style={{ textDecorationLine: 'line-through' }}>
+                    ₹ {item.price}
+                  </Text>
+                </Text>
+              </View>
             </View>
           )}
         />

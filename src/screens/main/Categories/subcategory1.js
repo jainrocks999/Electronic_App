@@ -128,7 +128,7 @@ const Subcategory = ({ navigation, route }) => {
               justifyContent: 'center',
             }}>
             <AntDesign
-              onPress={() => navigation.goBack()}
+              onPress={() => navigation.navigate('Home')}
               name="arrowleft"
               size={wp(5.9)}
               color="#000000"
@@ -202,7 +202,7 @@ const Subcategory = ({ navigation, route }) => {
                       ...
                     </Text>
                     <View style={styles.priceCOntainer}>
-                      {/* {item.special ? (
+                      {item.special ? (
                         <>
                           <Text style={[styles.Price, {color: 'black'}]}>
                             {item.special}
@@ -223,54 +223,10 @@ const Subcategory = ({ navigation, route }) => {
                         </>
                       ) : (
                         <Text style={[styles.Price, {color: 'black'}]}>
-                          ₹ {item.sale_price}
+                          ₹ {item.sale_price || item.price}
                         </Text>
-                      )} */}
-                      {item.special ? (
-                        <>
-                          {/* Special Price */}
-                          <Text style={[styles.Price, { color: 'black' }]}>
-                            ₹ {item.special}
-                          </Text>
-
-                          {/* Sale Price */}
-                          {item.sale_price ? (
-                            <Text
-                              style={[
-                                styles.Price,
-                                {
-                                  textDecorationLine: 'line-through',
-                                  fontSize: wp(3),
-                                  fontWeight: 'bold',
-                                  marginLeft: wp(1),
-                                  color: 'red',
-                                },
-                              ]}>
-                              ₹ {item.sale_price}
-                            </Text>
-                          ) : (
-                            <Text
-                              style={[
-                                styles.Price,
-                                {
-                                  fontSize: wp(3),
-                                  fontWeight: 'bold',
-                                  marginLeft: wp(1),
-                                  color: 'red',
-                                },
-                              ]}>
-                              ₹ {item.price}
-                            </Text>
-                          )}
-                        </>
-                      ) : (
-                        <>
-                          {/* Show Actual Price if Sale Price or Special is not there */}
-                          <Text style={[styles.Price, { color: 'black' }]}>
-                            ₹ {item.sale_price || item.price}
-                          </Text>
-                        </>
                       )}
+                     
 
                       <Text
                         style={[
@@ -558,7 +514,6 @@ const styles = StyleSheet.create({
     top: -hp('69%'),
   },
   iconic: {
-    // marginVertical:hp('-10%'),
     fontSize: wp(7),
     position: 'absolute',
   },

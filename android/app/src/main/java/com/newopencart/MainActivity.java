@@ -1,4 +1,4 @@
-package com.electronicshop_ecommerce;
+package com.electronicshop;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

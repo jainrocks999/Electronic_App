@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "316778717785",
-    "project_id": "umanagar-7ec1d",
-    "storage_bucket": "umanagar-7ec1d.firebasestorage.app"
+    "project_number": "951764297648",
+    "project_id": "electronic-19b92",
+    "storage_bucket": "electronic-19b92.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:316778717785:android:7ece6f9a0d5aa56d918748",
+        "mobilesdk_app_id": "1:951764297648:android:2982646a83f76b303ed875",
         "android_client_info": {
-          "package_name": "com.electronicshop_ecommerce"
+          "package_name": "com.electronicshop"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCtbiUbJU9GBDpKyJ3jlyI0cYy7VweP7RU"
+          "current_key": "AIzaSyBHeX_8kLCaXa-gsZs7tGn4wGlliCg2moI"
         }
       ],
       "services": {
